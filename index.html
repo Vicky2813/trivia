@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Trivia</title> <!-- Título -->
+    <link rel='stylesheet' href='estilostrivia.css'> <!-- Link con CSS -->
+  </head>
+  <body>
+    <div class="image-laboratoria">
+      <a href="https://www.youtube.com/channel/UC3LdpwpeIJqbm4hafXXqRHA" target="_blank">  <!-- Se utilizo etiqueta <a></a> para incluir el enlace de la imagen. -->
+        <img src="https://preview.ibb.co/fPEOOy/logo_laboratoria_07_2.png" alt="logo_laboratoria_07_2" border="0">
+      </a>
+    </div>
+    <p id='name'></p> <!-- ID para imprimir en HTML. Nombre de la jugadora -->
+    <h1 id='titleTrivia'>Trivia de Pre-admisión</h1> <!-- Titulo de la página-->
+    <hr/>
+    <h2 id='no-Play'> ¡¡¡ JUGAREMOS PARA LA PRÓXIMA !!! </br> :( </h2> <!-- ID para interactuar en JS-->
+    <div id="show-results">
+      <div>
+        <section id='titleRightAnswers'></section> <!-- ID para interactuar en JS -->
+        <section id='right'> </section> <!-- ID para interactuar en JS -->
+        <img id= 'image1' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-gGZN0JotrD_VNeVYSZilWIsVZXFekDE3mRGb7MY1CEDVwkslg'alt='respuestas.Correctas'> <!-- ID para modificar en CSS. Code Pen únicamente admite imagen desde URL -->
+<!-- <p id="image1" Primer intento para incluir imagen con el uso de un párrafo-->
+<!-- <p id="image1"  Id para interactuar imagen en JS y poder modificar en CSS -->
+<!-- <img src="correctas.jpg" alt="res.Correctas" border="0">
+</p> -->
+      </div>
+      <div>
+        <section id='titleWrongAnswers'></section> <!-- ID para imprimir en HTML -->
+        <section id='wrong'> </section>
+        <!-- <p id="image2" Id para interactuar imagen en JS y poder modificar en CSS -->
+        <img id= 'image2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-PE-JDz1w-I1KuCkBWTrH9pibKns09rB65SDUU0SaiPvq-oZo" alt="res.Incorrectas">
+        <!-- </p> -->
+      </div>
+    </div>
+    <script src='script.js'></script> <!-- Vinculamos HTML con JS-->
+  </body>
+</html>
