@@ -10,13 +10,77 @@
       <a href="https://www.youtube.com/channel/UC3LdpwpeIJqbm4hafXXqRHA" target="_blank">  <!-- Se utilizo etiqueta <a></a> para incluir el enlace de la imagen. -->
         <img src="https://preview.ibb.co/fPEOOy/logo_laboratoria_07_2.png" alt="logo_laboratoria_07_2" border="0">
       </a>
-    </div>
-    <p id='name'></p> <!-- ID para imprimir en HTML. Nombre de la jugadora -->
+    <!-- <p id='name'></p> <! ID para imprimir en HTML. Nombre de la jugadora -->
     <h1 id='titleTrivia'>Trivia de Pre-admisión</h1> <!-- Titulo de la página-->
     <hr/>
     <h2 id='no-Play'> ¡¡¡ JUGAREMOS PARA LA PRÓXIMA !!! </br> :( </h2> <!-- ID para interactuar en JS-->
-    <div id="show-results">
-      <div>
+    <div id="show-results"> </div>
+    <div id= 'nombreUsuario'>
+      <p>
+        Bienvenido </br> ¿Cúal es tu nombre ?
+        <div id='Hola'> </div>
+        <input type="yourName" id="name" >
+        <input type="submit"  value="ok" id="ok" onclick="agregarNombre()">
+      </p>
+    </div>
+    <form>
+      <label> HTML es :</label>
+      <br/>
+      <label>
+        <input name="question1" type="radio" value="Un lenguaje de programación"> Un lenguaje de programación <br/>
+        <input name="question1" type="radio" value="Un lenguaje de marcado"> Un lenguaje de marcado <br/>
+        <input name="question1" type="radio" value="Un lenguaje de marcado y modelado semántico"> Un lenguaje de marcado y modelado semántico <br/>
+      </label>
+      <br/>
+
+      <label> ¿Qué significa CSS? </label>
+      <br/>
+      <label>
+        <input name="question2" type="radio"> Hojas de estilo en escalera <br/>
+        <input name="question2" type="radio"> Hojas de estilo en cascada <br/>
+        <input name="question2" type="radio"> Hojas de estilo en acordeón <br/>
+      </label>
+      <br/>
+
+      <label> ¿Cuál de estos NO es una estructura de control? </label>
+      <br/>
+      <label>
+        <input name="question3" type="radio"> if <br/>
+        <input name="question3" type="radio"> else <br/>
+        <input name="question3" type="radio"> do while <br/>
+      </label>
+      <br/>
+
+      <label> ¿if y else pueden encadenarse? </label>
+      <br/>
+      <label>
+        <input name="question4" type="radio"> Verdadero <br/>
+        <input name="question4" type="radio"> Falso<br/>
+      </label>
+      <br/>
+
+      <label> ¿Cuál es una buena práctica al escribir código? </label>
+      <br/>
+      <label>
+        <input name="question5" type="radio"> Buena indentación <br/>
+        <input name="question5" type="radio"> Nunca utilizar inglés <br/>
+        <input name="question5" type="radio"> Comentar tu código <br/>
+        <input name="question5" type="radio"> A y C son correctas <br/>
+      </label>
+      <br/>
+
+      <label> ¿Quién es el PELÓN más buena onda de Laboratoria? </label>
+      <br/>
+      <label>
+        <input name="question6" type="radio"> Mike El Formal <br/>
+        <input name="question6" type="radio"> Manu El Relajado <br/>
+        <input name="question6" type="radio"> Jonh El Guardián de las laptops <br/>
+      </label>
+      <br/>
+
+      <input type="submit"  value="aceptar" id="aceptar" onclick="aceptarPreguntas()">
+
+    </form>
         <section id='titleRightAnswers'></section> <!-- ID para interactuar en JS -->
         <section id='right'> </section> <!-- ID para interactuar en JS -->
         <img id= 'image1' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-gGZN0JotrD_VNeVYSZilWIsVZXFekDE3mRGb7MY1CEDVwkslg'alt='respuestas.Correctas'> <!-- ID para modificar en CSS. Code Pen únicamente admite imagen desde URL -->
