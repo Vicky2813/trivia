@@ -3,100 +3,111 @@
   <head>
     <meta charset="utf-8">
     <title>Trivia</title> <!-- Título -->
-    <link rel='stylesheet' href='estilostrivia.css'> <!-- Link con CSS -->
+    <link rel="stylesheet" href="css/estilostrivia.css"> <!-- Link con CSS -->
   </head>
   <body>
     <div class="image-laboratoria">
       <a href="https://www.youtube.com/channel/UC3LdpwpeIJqbm4hafXXqRHA" target="_blank">  <!-- Se utilizo etiqueta <a></a> para incluir el enlace de la imagen. -->
-        <img src="https://preview.ibb.co/fPEOOy/logo_laboratoria_07_2.png" alt="logo_laboratoria_07_2" border="0">
+        <img src="img/Laboratoria.png" alt="logo_laboratoria_07_2" border="0" />
       </a>
-    <!-- <p id='name'></p> <! ID para imprimir en HTML. Nombre de la jugadora -->
-    <h1 id='titleTrivia'>Trivia de Pre-admisión</h1> <!-- Titulo de la página-->
+    </div>
+    <h1 id="titleTrivia">Trivia de Pre-admisión</h1> <!-- Titulo de la página-->
     <hr/>
-    <h2 id='no-Play'> ¡¡¡ JUGAREMOS PARA LA PRÓXIMA !!! </br> :( </h2> <!-- ID para interactuar en JS-->
     <div id="show-results"> </div>
-    <div id= 'nombreUsuario'>
+    <!-- AQUI PEDIMOS EL NOMBRE DE USUARIO -->
+    <div id= "nombreUsuario">
       <p>
-        Bienvenido </br> ¿Cúal es tu nombre ?
-        <div id='Hola'> </div>
-        <input type="yourName" id="name" >
-        <input type="submit"  value="ok" id="ok" onclick="agregarNombre()">
+        <div id="hola"></div>
+        <input id="name" type="yourName" placeholder="Escribe tu nombre y presiona enter..." onkeypress="agregarNombre(event)"/>
       </p>
     </div>
-    <form>
-      <label> HTML es :</label>
-      <br/>
-      <label>
-        <input name="question1" type="radio" value="Un lenguaje de programación"> Un lenguaje de programación <br/>
-        <input name="question1" type="radio" value="Un lenguaje de marcado"> Un lenguaje de marcado <br/>
-        <input name="question1" type="radio" value="Un lenguaje de marcado y modelado semántico"> Un lenguaje de marcado y modelado semántico <br/>
-      </label>
-      <br/>
-
-      <label> ¿Qué significa CSS? </label>
-      <br/>
-      <label>
-        <input name="question2" type="radio"> Hojas de estilo en escalera <br/>
-        <input name="question2" type="radio"> Hojas de estilo en cascada <br/>
-        <input name="question2" type="radio"> Hojas de estilo en acordeón <br/>
-      </label>
-      <br/>
-
-      <label> ¿Cuál de estos NO es una estructura de control? </label>
-      <br/>
-      <label>
-        <input name="question3" type="radio"> if <br/>
-        <input name="question3" type="radio"> else <br/>
-        <input name="question3" type="radio"> do while <br/>
-      </label>
-      <br/>
-
-      <label> ¿if y else pueden encadenarse? </label>
-      <br/>
-      <label>
-        <input name="question4" type="radio"> Verdadero <br/>
-        <input name="question4" type="radio"> Falso<br/>
-      </label>
-      <br/>
-
-      <label> ¿Cuál es una buena práctica al escribir código? </label>
-      <br/>
-      <label>
-        <input name="question5" type="radio"> Buena indentación <br/>
-        <input name="question5" type="radio"> Nunca utilizar inglés <br/>
-        <input name="question5" type="radio"> Comentar tu código <br/>
-        <input name="question5" type="radio"> A y C son correctas <br/>
-      </label>
-      <br/>
-
-      <label> ¿Quién es el PELÓN más buena onda de Laboratoria? </label>
-      <br/>
-      <label>
-        <input name="question6" type="radio"> Mike El Formal <br/>
-        <input name="question6" type="radio"> Manu El Relajado <br/>
-        <input name="question6" type="radio"> Jonh El Guardián de las laptops <br/>
-      </label>
-      <br/>
-
-      <input type="submit"  value="aceptar" id="aceptar" onclick="aceptarPreguntas()">
-
-    </form>
-        <section id='titleRightAnswers'></section> <!-- ID para interactuar en JS -->
-        <section id='right'> </section> <!-- ID para interactuar en JS -->
-        <img id= 'image1' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-gGZN0JotrD_VNeVYSZilWIsVZXFekDE3mRGb7MY1CEDVwkslg'alt='respuestas.Correctas'> <!-- ID para modificar en CSS. Code Pen únicamente admite imagen desde URL -->
-<!-- <p id="image1" Primer intento para incluir imagen con el uso de un párrafo-->
-<!-- <p id="image1"  Id para interactuar imagen en JS y poder modificar en CSS -->
-<!-- <img src="correctas.jpg" alt="res.Correctas" border="0">
-</p> -->
-      </div>
-      <div>
-        <section id='titleWrongAnswers'></section> <!-- ID para imprimir en HTML -->
-        <section id='wrong'> </section>
-        <!-- <p id="image2" Id para interactuar imagen en JS y poder modificar en CSS -->
-        <img id= 'image2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-PE-JDz1w-I1KuCkBWTrH9pibKns09rB65SDUU0SaiPvq-oZo" alt="res.Incorrectas">
-        <!-- </p> -->
-      </div>
+    <!-- /AQUI PEDIMOS EL NOMBRE DE USUARIO -->
+    <div id="readyToPlay">
+      <p>¿Estas listo para jugar?</p>
+      <input class="trivia-button" type="button" value="Si" onclick="listoParaJugar(event)"/>
+      <input class="trivia-button" type="button" value="No" onclick="listoParaJugar(event)"/>
     </div>
-    <script src='script.js'></script> <!-- Vinculamos HTML con JS-->
+    <p id="no-play">¡¡¡ JUGAREMOS PARA LA PROXIMA !!!</p>
+    <form id="questions" action="#">
+      <fieldset>
+          <label> HTML es :</label>
+          <br/>
+          <label>
+            <input name="question1" type="radio" value="Un lenguaje de programación"> Un lenguaje de programación <br/>
+            <input name="question1" type="radio" value="Un lenguaje de marcado"> Un lenguaje de marcado <br/>
+            <input name="question1" type="radio" value="Un lenguaje de marcado y modelado semántico"> Un lenguaje de marcado y modelado semántico <br/>
+          </label>
+          <br/>
+    
+          <label> ¿Qué significa CSS? </label>
+          <br/>
+          <label>
+            <input name="question2" type="radio" value="Hojas de estilo en escalera"> Hojas de estilo en escalera <br/>
+            <input name="question2" type="radio" value="Hojas de estilo en cascada"> Hojas de estilo en cascada <br/>
+            <input name="question2" type="radio" value="Hojas de estilo en acordeón"> Hojas de estilo en acordeón <br/>
+          </label>
+          <br/>
+    
+          <label> ¿Cuál de estos NO es una estructura de control? </label>
+          <br/>
+          <label>
+            <input name="question3" type="radio" value="if"> if <br/>
+            <input name="question3" type="radio" value="else"> else <br/>
+            <input name="question3" type="radio" value="do if"> do if <br/>
+          </label>
+          <br/>
+    
+          <label> ¿if y else pueden encadenarse? </label>
+          <br/>
+          <label>
+            <input name="question4" type="radio" value="Verdadero"> Verdadero <br/>
+            <input name="question4" type="radio" value="Falso"> Falso<br/>
+          </label>
+          <br/>
+    
+          <label> ¿Cuál es una buena práctica al escribir código? </label>
+          <br/>
+          <label>
+            <input name="question5" type="radio" value="Buena indentación"> Buena indentación <br/>
+            <input name="question5" type="radio" value="Nunca utilizar inglés"> Nunca utilizar inglés <br/>
+            <input name="question5" type="radio" value="Comentar tu código"> Comentar tu código <br/>
+            <input name="question5" type="radio" value="A y C son correctas"> A y C son correctas <br/>
+          </label>
+          <br/>
+    
+          <label> ¿Quién es el PELÓN más buena onda de Laboratoria? </label>
+          <br/>
+          <label>
+            <input name="question6" type="radio" value="Mike El Formal"> Mike El Formal <br/>
+            <input name="question6" type="radio" value="Manu El Relajado"> Manu El Relajado <br/>
+            <input name="question6" type="radio" value="Jonh El Guardián de las laptops"> Jonh El Guardián de las laptops <br/>
+          </label>
+          <br/>
+          <input class="trivia-button" type="submit"  value="RESPONDER" id="sendAnswer">
+      </fieldset>
+      
+    </form>
+    <div id="totalAnswer">
+      <table id="tableAnswer" class="center">
+        <tr>
+          <th>Preguntas</th>
+          <th>Correctas</th>
+          <th>Incorrectas</th>
+        </tr>
+      </table>
+      <p><strong>CORRECTAS: </strong><span id="rightAnswer"></span></p>
+      <p><strong>INCORRECTAS: </strong><span id="wrongAnswer"></span></p>
+    </div>
+
+    <!-- <section id="titleRightAnswers"></section> ID para interactuar en JS -->
+    <!-- <section id="right"> </section> ID para interactuar en JS -->
+    <!-- <img id="image1" src="img/correcta.png" alt="respuestas.Correctas"> ID para modificar en CSS. Code Pen únicamente admite imagen desde URL -->
+    <!-- <div>
+      <section id="titleWrongAnswers"></section>
+      <section id="wrong"> </section>
+      <img id= "image2" src="img/incorrecta.png" alt="res.Incorrectas">
+    </div> -->
+  </div>
+  <script src="js/script.js"></script> <!-- Vinculamos HTML con JS-->
   </body>
 </html>

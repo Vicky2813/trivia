@@ -9,28 +9,106 @@ var image2 = document.getElementById("image2");
 var showResults = document.getElementById('show-results');
 var nombreUsuario = document.getElementById('nombreUsuario');
 var button = document.createElement('Ok');
-var question0 = '¿Lista para jugar?'; //Declaración de variable para saber si desea jugar
-// var isReadyToPlay = confirm(question0)   //Confirm que nos indicará si la usuaria desea iniciar el juego
-// if (button.addEventListener) {
-//     button.addEventListener('click', funcion, false);
-// } else {
-//     boton.attachEvent('onclick', funcion);
+var questionsForm = document.querySelector('#questions')
+var totalAnswer = document.getElementById('totalAnswer')
+var spanRightAnswer = document.getElementById('rightAnswer')
+var spanWrongAnswer = document.getElementById('wrongAnswer')
+var triviaQuestions = [
+  'HTML es',
+  '¿Qué significa CSS?',
+  '¿Cuál de estos NO es una estructura de control?',
+  '¿if y else pueden encadenarse?',
+  '¿Cuál es una buena práctica al escribir código?',
+  '¿Quién es el PELÓN más buena onda de Laboratoria?'
+]
+var globalAnswer = []
+var correctAnswer = [
+  'Un lenguaje de marcado y modelado semántico',
+  'Hojas de estilo en cascada',
+  'do if',
+  'Verdadero',
+  'A y C son correctas',
+  'Jonh El Guardián de las laptops'
+]
 
 function agregarNombre (event) {
-  var prueba = document.getElementById("name");
-  var nombreUsuario = prueba.value;
-  var submit = document.getElementById ('ok');
-  document.getElementById('Hola').innerHTML= ('Bienvenid@  ' +  nombreUsuario);
-  prueba.style.display='none';
-  submit.style.display='none';
+  var readyToPlay = document.getElementById('readyToPlay')
+  if (event.keyCode === 13) {
+    var inputName = document.getElementById('name')
+    var name = inputName.value
+    document.getElementById('hola').innerHTML = 'Bienvenid@ ' + name
+    inputName.style.display = 'none'
+    readyToPlay.style.display = 'block'
+  }
 }
 
-function aceptarPreguntas (event) {
+function listoParaJugar (event) {
+  var answer = event.target.value
+  var questions = document.getElementById('questions')
+  var noPlay = document.getElementById('no-play') 
+  var readyToPlay = document.getElementById('readyToPlay')
+  if (answer === 'Si') {
+    questions.style.display = 'block'
+  } else {
+    noPlay.style.display = 'block'
+  }
+  readyToPlay.style.display = 'none'
+}
+
+questionsForm.addEventListener('submit', function(event) {
   event.preventDefault()
   console.log(event)
-  console.log('Me estan llamando')
-}
 
+  var rightAnswers = 0
+  var wrongAnswers = 0
+
+  // Aqui estamos recorriendo todas las preguntas y verificando las respuestas
+  for (var i = 1; i < 7; i++) {
+    var answers = document.getElementsByName('question'+i)
+    answers.forEach(function(e) {
+      if (e.checked) {
+        globalAnswer.push(e.value)
+        console.log(e.value)
+      }
+    })
+  }
+
+  correctAnswer.forEach(function (currentValue, index) {
+    // CREO UN ELEMENTO DE FILA PARA LA TABLA <tr></tr>
+    var newRow = document.createElement('tr')
+    // CREO LAS COLUMNAS PARA LA FILA DE LA TABLA <td></td>
+    var questionTd = document.createElement('td')
+    var rightTd = document.createElement('td')
+    var wrongTd = document.createElement('td')
+    questionTd.innerHTML = triviaQuestions[index]
+    
+    
+    if (currentValue === globalAnswer[index]) {
+      rightTd.innerHTML = 'X'
+      wrongTd.innerHTML = '-'
+      rightAnswers += 1
+    } else {
+      rightTd.innerHTML = '-'
+      wrongTd.innerHTML = 'X'
+      wrongAnswers += 1
+    }
+    newRow.appendChild(questionTd)
+    newRow.appendChild(rightTd)
+    newRow.appendChild(wrongTd)
+    tableAnswer.appendChild(newRow)
+  })
+
+  // COLOCO EN HTML CUANTAS RESPUESTAS CORRECTAS E INCORRECTAS
+  spanRightAnswer.innerHTML = rightAnswers
+  spanWrongAnswer.innerHTML = wrongAnswers
+
+  // OCULTO LA CAJA DE PREGUNTAS
+  questionsForm.style.display = 'none'
+
+  // MUESTRO LA TABLE DE RESULTADOS
+  totalAnswer.style.display = 'block'
+
+}) 
 
 
 

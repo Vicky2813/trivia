@@ -2,10 +2,80 @@ body {
   font-family: Arial;
   background-color: #00CED1;
 }
-#name {
-  text-align: right;
-  font-size: 18px;
+
+table {
+  background-color: white;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  display: 'none';
+}
+
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+#hola {
+  color: white;
+  font-size: 22px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#questions {
+  display: none;
+}
+
+#totalAnswer {
+  display: none;
+}
+
+#totalAnswer > p{
+  color: white;
+}
+
+#readyToPlay {
+  display: none;
+  text-align: center;
+  color: white;
+  font-size: 22px;
   font-weight: bold;
+}
+
+.trivia-button {
+  background-color: yellow;
+  font-size: 18px;
+  padding: 1em;
+  font-weight: bold;
+}
+
+#name {
+  /* font-size: 16px;
+  font-weight: bold;
+  width: 300px;
+  height: 35px;
+  border-radius: 25px;
+  padding: 1em;
+  border-color: black; */
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #nombreUsuario {
@@ -14,7 +84,7 @@ body {
   font-weight: bold;
 }
 
-#no-Play {
+#no-play {
   color: green;
   text-align: center;
   border: 2px solid black;
@@ -27,8 +97,9 @@ body {
   font-family: fantasy;
   text-align:center;
   background-color: 	#FFD700;
-  text-size: 22px;
+  font-size: 30px;
   color:	black;
+  padding: 1em;
 }
 
 #titleRightAnswers {
@@ -73,7 +144,10 @@ body {
 }
 
 .image-laboratoria{
-  margin: 2em 20em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }
 
 #image1 {
