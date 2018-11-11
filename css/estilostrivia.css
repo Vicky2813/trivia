@@ -1,90 +1,95 @@
 body {
-  font-family: Arial;
+  font-family: 'Comfortaa', cursive;
   background-color: #00CED1;
 }
 
-table {
-  background-color: white;
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  display: 'none';
+#correctas {
+  font-size: 2em;
+  font-weight: bold;
+  color: green;
 }
 
-table.center {
-  margin-left:auto; 
-  margin-right:auto;
+.separator {
+  font-size: 2em;
+  font-weight: bold;
 }
 
-#hola {
-  color: white;
-  font-size: 22px;
+#incorrectas {
+  font-size: 2em;
+  font-weight: bold;
+  color: red;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.main-section {
+  margin: 1em 0;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-#questions {
-  display: none;
-}
-
-#totalAnswer {
-  display: none;
-}
-
-#totalAnswer > p{
-  color: white;
-}
-
-#readyToPlay {
-  display: none;
+.main-title {
   text-align: center;
-  color: white;
-  font-size: 22px;
+  font-size: 48px;
   font-weight: bold;
+  margin: 1em 0 0 0;
 }
 
-.trivia-button {
-  background-color: yellow;
-  font-size: 18px;
-  padding: 1em;
+.game-btn {
+  display: block;
+  margin: 0 auto;
+  font-size: 76px;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+}
+
+.main-logos {
+  display: block;
+  margin: 0 auto;
+  width: 256px;
+}
+
+.question {
+  text-align: center;
   font-weight: bold;
+  font-size: 24px;
+}
+
+.questions {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.footer {
+  margin: 1em 0 0 0;
+  padding: 1em 0 0 0;
+  text-align: center;
+  background-color: #f8f9fa!important;
+  height: 58px;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width: 100%;
+  vertical-align: middle;
+  display: table-cell
 }
 
 #name {
-  /* font-size: 16px;
-  font-weight: bold;
-  width: 300px;
-  height: 35px;
-  border-radius: 25px;
-  padding: 1em;
-  border-color: black; */
-  font-size:18px;
-  padding:10px 10px 10px 5px;
-  display:block;
-  width:300px;
-  border:none;
-  border-bottom:1px solid #757575;
-  width: 70%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#nombreUsuario {
-  text-align: center;
+  text-align: right;
   font-size: 18px;
   font-weight: bold;
 }
 
-#no-play {
+#no-Play {
   color: green;
   text-align: center;
   border: 2px solid black;
@@ -97,9 +102,8 @@ tr:nth-child(even) {
   font-family: fantasy;
   text-align:center;
   background-color: 	#FFD700;
-  font-size: 30px;
+  text-size: 22px;
   color:	black;
-  padding: 1em;
 }
 
 #titleRightAnswers {
@@ -120,7 +124,7 @@ tr:nth-child(even) {
 
 #right {
   border-right: 10px double #FFD700;
-  display: inline-table;
+  display: inline-block;
   width: 300px;
   height: 300px;
   float: left;
@@ -131,7 +135,7 @@ tr:nth-child(even) {
 
 #wrong {
   border-left: 10px double #FFD700;
-  display: inline-table;
+  display: inline-block;
   width: 300px;
   height: 300px;
   float: right;
@@ -144,16 +148,13 @@ tr:nth-child(even) {
 }
 
 .image-laboratoria{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+  margin: 2em 20em;
 }
 
 #image1 {
   float: left;
   width: 10em;
-  height: 8em;
+  height: 5em;
   margin-right: 20em;
   margin-top: 12em;
 }
@@ -161,6 +162,6 @@ tr:nth-child(even) {
 #image2 {
   float: right;
   width: 10em;
-  height: 6em;
+  height: 5em;
   margin-left: 20em;
 }

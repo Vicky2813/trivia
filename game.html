@@ -10,7 +10,7 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <figure class="logo">
             <img width="32" src="img/laboratoria-logo.png" alt="logo-laboratoria" /> <strong>TriviaLab</strong>
           </figure>
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Categorias</a>
@@ -39,44 +39,12 @@
     <section class="container">
       <div class="row">
         <div class="col-md">
-            <h1 class="main-title">TriviaLab</h1>
-            <p class="text-center">Es un divertido juego de preguntas en el que podras afinar tus conocimientos aprendidos en Laboratoria.</p>
+          <h1 class="main-title">TriviaLab</h1>
+          <h3 id="subtitle" class="text-center"></h3>
         </div>
       </div>
-      <div class="row main-section">
-        <div class="col-sm col-md col-lg">
-          <div class="card">
-            <div class="card-body">
-              <h2 class="text-center">Juega</h2>
-              <figure>
-                <img class="main-logos" width="256" src="img/play.png" alt="Juega">
-              </figure>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm col-md col-lg">
-          <div class="card">
-            <div class="card-body">
-              <h2 class="text-center">Aprende</h2>
-              <figure>
-                <img class="main-logos" width="256" src="img/learn.png" alt="">
-              </figure>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm col-md col-lg">
-          <div class="card">
-            <div class="card-body">
-              <h2 class="text-center">Diviértete</h2>
-              <figure>
-                <img class="main-logos" width="256" src="img/enjoy.png" alt="">
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <a class="btn btn-success btn-lg game-btn"href="game.html">¡Jugar!</a>
+      <div id="gameContainer" class="row">
+        <a id="startGame" href="#" class="btn btn-success game-btn mx-auto" href="game.html">¡Comencemos!</a>
       </div>
     </section>
     <footer class="footer">
@@ -85,5 +53,6 @@
         <a href="http://vicky2813.github.io/me" target="_blank">Victoria Acosta</a>
       </p>
     </footer>
+    <script src="js/main.js"></script>
   </body>
 </html>
