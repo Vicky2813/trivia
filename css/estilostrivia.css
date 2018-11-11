@@ -32,9 +32,10 @@ body {
 }
 
 .game-btn {
+  width: 90%;
   display: block;
   margin: 0 auto;
-  font-size: 76px;
+  font-size: 56px;
 }
 
 .show {
